@@ -1,0 +1,637 @@
+html{
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    scroll-padding: 100px;
+}
+*{  
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    /* outline: 1px solid red; */
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+
+/* Header */
+.container{
+    position: relative;
+    margin-top: 100px;
+    
+}
+
+.container img{
+    display: block;
+    width: 100%;
+}
+
+nav {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding:.5%;
+    height: 100px;
+    width: 100%;
+    background-color: #24252A;
+    
+}
+
+nav .logo-containter{
+    float: left;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: #fff;
+    
+}
+
+nav .logo{
+    margin-left: 2em;
+}
+
+nav .links{
+    float: right;
+    padding: 0;
+    margin: 0;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav .links li{
+    list-style: none;
+}
+
+nav .links a{
+    display: block;
+    padding: 1em;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    transition-property: color, transform;
+    transition-duration: .3s;
+    
+    
+}
+
+nav .links :not(:last-child) a:hover{
+    color:  #3dbcdb;
+}
+
+nav .links button{
+    margin-left: 20px;
+    padding: -30px;
+    background-color: rgba(0,136,169,1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+nav .links button:hover{
+    background-color: rgb(0, 94, 117);
+    color: #fff;
+}
+
+#nav-toggle {
+    position: absolute;
+    top: -100px;
+}
+
+nav .icon-burger{
+    display: none;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav .icon-burger .line{
+    width: 30px;
+    height: 5px;
+    background-color: #fff;
+    margin: 5px;
+    border-radius: 3px;
+    transition: all .3s ease-in-out;
+}
+
+@media screen and (max-width: 768px){
+    nav .logo-containter{
+        float: none;
+        width: auto;
+        justify-content: center;
+        
+    }
+    nav .logo{
+        margin-left: 0;
+    }
+
+    nav .links{
+        float: none;
+        position: fixed;
+        z-index: 9;
+        left: 0;
+        right: 0;
+        top: 100px;
+        bottom: 100%;
+        width: auto;
+        height: auto;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: #24252abb;
+        overflow: hidden;
+        transition: all .5s ease-in-out;
+    }
+    nav .links a{
+        font-size: 20px;
+
+    }
+    nav :checked ~ .links{
+        bottom: 0;
+    }
+    nav .icon-burger{
+        display: block;
+    } 
+
+    nav :checked ~.icon-burger .line:nth-child(1){
+        transform: translateY(10px) rotate(225deg);
+    }
+
+    nav :checked ~.icon-burger .line:nth-child(3){
+        transform: translateY(-10px) rotate(-225deg);
+    }
+
+    nav :checked ~.icon-burger .line:nth-child(2){
+        opacity: 0;
+    }
+    
+    
+}
+
+/* .header-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 8px;
+    background-color: #24252A;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+} 
+li, a, button{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+    
+}
+.nav__links a{
+    transition-property: color, transform;
+    transition-duration: .3s;
+}
+
+.nav__links a:hover {
+    color:  #3dbcdb;
+}
+.nav__inicio, .nav__especialidades{
+    border-right: 1px solid #3dbcdb;
+}
+.button-contacto{
+    margin-left: 20px;
+    padding: 9px 25px;
+    background-color: rgba(0,136,169,1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+} */
+
+
+/* Main */
+
+
+.main-container{
+    padding-top: 76px;
+}
+
+/* Main__Section-IMG */
+.section__img{
+    margin: 0;
+    display: flex;
+    background: url(imagenfondo.jpg);
+    background-size: cover;
+    background-color: rgb(100,100,100);
+    background-blend-mode: soft-light;
+    height: 80vh;
+    width: 100%;
+}
+
+.txt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-justify: center;
+    flex-direction: column;
+    color: #edf0f1;
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100px;
+    width: 100%;
+    padding: 0px 300px;
+}
+
+.hr-img{
+    margin-top: 30px;
+    border: none;
+    background: #3dbcdb;
+    border-radius: 10px;
+    height: 4px;
+    width: 350px;
+}
+
+/* Main__Section-Esp */
+
+.section__esp{
+    
+    width: 100%;
+}
+
+.box-container{
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    height: auto;
+    margin: 1em 5em 4em;
+}
+.box{
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    margin: 5px;
+    height: 300px;
+    width: 330px;
+    border-radius: 5%;
+    margin: 70px 30px 0px 30px;
+    padding: 30px;
+    
+}
+
+.h2-esp{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.hr-esp{
+    margin: 15px 0px 30px;
+    background-color: #3dbcdb;
+    border-radius: 10px;
+    border: .7px solid #3dbcdb ;
+}
+
+.p-esp{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    text-align: center;
+}
+
+.box-1,.box-2, .box-3{
+    transition-property: background, color, box-shadow;
+    transition-duration: .5s;
+    
+}
+
+.box-1:hover{
+    background: url(odontolog_general.jpg);
+    background-size: cover;
+    color: #fff;
+    background-color: rgb(100,100,100);
+    background-blend-mode: soft-light;
+    -webkit-box-shadow: 0px 0px 23px 5px rgba(0,0,0,0.64); 
+    box-shadow: 0px 0px 23px 5px rgba(0,0,0,0.64);
+    
+}
+
+.box-2:hover{
+    background: url(ortodoncia.jpg);
+    background-size: cover;
+    color: #fff;
+    background-color: rgb(100,100,100);
+    background-blend-mode: soft-light;
+    -webkit-box-shadow: 0px 0px 23px 5px rgba(0,0,0,0.64); 
+    box-shadow: 0px 0px 23px 5px rgba(0,0,0,0.64);
+}
+
+.box-3:hover{
+    background: url(estetica-dental.jpg);
+    background-size: cover;
+    color: #fff;
+    background-color: rgb(100,100,100);
+    background-blend-mode: soft-light;
+    -webkit-box-shadow: 0px 0px 23px 5px rgba(0,0,0,0.64); 
+    box-shadow: 0px 0px 23px 5px rgba(0,0,0,0.64);
+}
+
+
+/* Main__Section-map */
+.section__map{
+    
+    margin-bottom: 30px;
+}
+
+.map-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin-bottom: 150px;
+}
+
+iframe{
+    margin: 30px;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    transition-property: background, color, box-shadow;
+    transition-duration: .5s;
+}
+
+iframe:hover{
+    -webkit-box-shadow: 0px 0px 23px 5px rgba(0,0,0,0.64); 
+    box-shadow: 0px 0px 23px 5px rgba(0,0,0,0.64);
+}
+
+/* Main__Section-odontologos */
+
+.section__odontologos{
+    
+    margin-bottom: 150px;
+}
+
+.od-container{
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    height: auto;
+}
+
+
+.h2-od{
+    color: #24252A;
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100px;
+    text-align: center;
+    margin-top: 40px;
+    
+}
+
+.hr-od--title{
+    margin: 15px 0px 30px;
+    background-color: #3dbcdb;
+    border-radius: 10px;
+    border: .7px solid #3dbcdb;
+    width: 40px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%) translateY(-30%);
+}
+
+.p-od{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    text-align: center;
+    position: relative;
+    bottom: 10px;
+}
+
+
+.od-container--prof{
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    height: auto;
+    margin: auto 60px 40px;
+    
+}
+.prof{
+    background-color: transparent;
+    margin: 5px;
+    height: 400px;
+    width: 430px;
+    border-radius: 5%;
+    margin: 70px 30px 0px 30px;
+    padding: 30px;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    align-content: center;
+    justify-content: center;
+    transition-property: background, color, box-shadow;
+    transition-duration: .5s;
+}
+
+.prof:hover{
+    -webkit-box-shadow: 0px 0px 23px 5px rgba(0,0,0,0.64); 
+    box-shadow: 0px 0px 23px 5px rgba(0,0,0,0.64);
+}
+
+.od-container--img1, .od-container--img2{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto 10px;
+    align-content: center;
+    justify-content: center;  
+}
+
+
+.img-prof{
+    height: 100px;
+    width: 100px; 
+    border: 1px solid #edf0f1;
+    border-radius: 50px;
+    position: relative;
+    display: inline;
+    
+}
+
+
+.h2-prof{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.p-prof{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    text-align: center;
+}
+
+/* Main__Section-contacto */
+
+.section__contacto{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.form-container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    margin: 100px 300px 50px;
+    padding: 20px;
+    width: auto;
+    min-width:420px;
+    border-radius: 5%;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    transition-property: background, color, box-shadow;
+    transition-duration: .5s;
+}
+.form-container:hover{
+    -webkit-box-shadow: 0px 0px 23px 5px rgba(0,0,0,0.64); 
+    box-shadow: 0px 0px 23px 5px rgba(0,0,0,0.64);
+}
+
+.form{
+    min-width: 400px;
+    text-align: center;
+    justify-items: center;
+    
+    
+}
+
+.form__input {
+    width: 100%;
+    padding: 8px;
+    margin: 6px 0;
+    border-color: transparent;
+    border-bottom: 1px solid #3dbcdb;
+    outline: transparent;
+}
+.form textarea{
+    min-width: 120px;
+    resize: none;
+}
+
+.submit{
+    border: none;
+    width: 30%;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    background-color: rgba(0,136,169,1);
+    color: #edf0f1;
+}
+.submit:hover{
+    background-color:  rgba(0,136,169,.8);
+}
+
+
+.form__contacto{
+    height:100%;
+    flex: .7;
+    margin: 30px;
+    border-left: 3px solid #3dbcdb;
+    width: 300px;
+    padding: 20px;
+    flex-shrink: 1;
+
+}
+.form__contacto h2{
+    width: 100%;
+    font-weight: 700;
+    font-size: 3.5em;
+    margin: left;
+}
+
+/* Footer */
+
+footer{
+    margin-top: 200px;
+    margin-bottom: 100px;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    place-items: center; 
+}
+.wrapper .button{
+    
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    float: left;
+    margin: 0 5px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-out;
+  }
+.wrapper .button:hover{
+    width: 200px;
+  }
+.wrapper .button .icon{
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+  }
+.wrapper .button:nth-child(1):hover .icon{
+    background: #4267B2;
+  }
+.wrapper .button:nth-child(2):hover .icon{
+    background: #1DA1F2;
+  }
+.wrapper .button:nth-child(3):hover .icon{
+    background: #E1306C;
+  }
+  
+.wrapper .button:nth-child(4):hover .icon{
+    background: #ff0000;
+  }
+.wrapper .button .icon i{
+    font-size: 25px;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+  }
+.wrapper .button:hover .icon i{
+    color: #fff;
+  }
+.wrapper .button span{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-left: 10px;
+    transition: all 0.3s ease-out;
+  }
+.wrapper .button:nth-child(1) span{
+    color: #4267B2;
+  }
+.wrapper .button:nth-child(2) span{
+    color: #1DA1F2;
+  }
+.wrapper .button:nth-child(3) span{
+    color: #E1306C;
+  }
+.wrapper .button:nth-child(4) span{
+    color: #ff0000;
+  }
+
+.derechosreservados{
+    margin-top: 40px;
+}
+
